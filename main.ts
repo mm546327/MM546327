@@ -12,13 +12,13 @@ input.onGesture(Gesture.TiltRight, function () {
 })
 let 蛇: game.LedSprite = null
 蛇 = game.createSprite(2, 2)
-let 點心 = game.createSprite(randint(0, 4), randint(0, 4))
+let 點 = game.createSprite(randint(0, 4), randint(0, 4))
 basic.forever(function () {
-    if (蛇.isTouching(點心)) {
+    if (蛇.isTouching(點)) {
         game.addScore(1)
-        點心.delete()
+        點.delete()
         basic.pause(100)
-        點心 = game.createSprite(randint(0, 4), randint(0, 4))
+        點 = game.createSprite(randint(0, 4), randint(0, 4))
     }
     if (game.score() == 10) {
         basic.showIcon(IconNames.Happy)
